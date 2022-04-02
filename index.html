@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Projects</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <nav class="link">
+            <ul class="link__menu">
+                <li class="link__item"><a class="link__btn" href="#timer">Таймер</a></li>
+                <li class="link__item"><a class="link__btn" href="#game">Крестики нолики</a></li>
+                <li class="link__item"><a class="link__btn" href="#clicker">Кликер</a></li>
+                <li class="link__item"><a class="link__btn" href="#">Контект</a></li>
+                <li class="link__item"><a class="link__btn link__last" href="#">Контект</a></li>
+            </ul>
+        </nav>
+        <div class="social">
+            <a class="social__link" href="https://www.linkedin.com/in/anton-arkhangelsky-4ba040227/" target="_blank"><i
+                    class="fa fa-linkedin-square" aria-hidden="true"></i>
+            </a>
+            <a class="social__link" href="https://github.com/w1zze" target="_blank"><i class="fa fa-github-square"
+                    aria-hidden="true"></i>
+            </a>
+            <a class="social__link" href=""><i class="fa fa-facebook-square" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <!-- TIMER -->
+        <section class="timer" id="timer">
+            <div class="timer__inner">
+                <h1 class="timer__title">Осталось времени до конца акции:</h1>
+                <div class="timer__wrapper">
+                    <div class="timer__block">
+                        <span class="timer__span" id="days">12</span>
+                        дней
+                    </div>
+                    <div class="timer__block">
+                        <span class="timer__span" id="hours">20</span>
+                        часов
+                    </div>
+                    <div class="timer__block">
+                        <span class="timer__span" id="minutes">56</span>
+                        минут
+                    </div>
+
+                    <div class="timer__block">
+                        <span class="timer__span" id="seconds">20</span>
+                        секунд
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //TIMER -->
+
+        <!-- GAME -->
+        <section class="game" id="game">
+            <div class="game__inner">
+                <h1 class="game__title">Крестики нолики</h1>
+                <div class="game__wrapper">
+                    <div class="game__block"></div>
+                    <div class="game__block"></div>
+                    <div class="game__block"></div>
+                    <div class="game__block"></div>
+                    <div class="game__block"></div>
+                    <div class="game__block"></div>
+                    <div class="game__block"></div>
+                    <div class="game__block"></div>
+                    <div class="game__block"></div>
+                </div>
+            </div>
+            <div class="game__modal">
+                <div class="game__overlay">
+                    <div class="game__modal_wrapper">
+                        <div class="game__content">content</div>
+                        <div class="game__close">Начать новую игру</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //GAME -->
+
+        <!-- CLICKER -->
+        <section class="clicker" id="clicker">
+            <div class="clicker__inner">
+                <h1 class="clicker__title">Кликер</h1>
+                <div class="clicker__wrapper">
+                    <div class="clicker__score">0</div>
+                    <button class="clicker__block"></button>
+                </div>
+            </div>
+        </section>
+        <!-- //CLICKER -->
+
+    </div>
+
+    <script src="js/main.min.js"></script>
+    <script src="https://kit.fontawesome.com/7cdb33ebcf.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
