@@ -1,3 +1,23 @@
+
+gsap.registerPlugin(ScrollTrigger)
+
+gsap.from('.timer', {
+    y: '-200%',
+    delay: .3
+});
+gsap.from('.timer__inner', {
+    opacity: 0,
+    delay: 1
+});
+gsap.from('.link', {
+    y: '300%',
+    delay: 1
+});
+gsap.from('.social', {
+    y: '300%',
+    delay: 1.2
+});
+
 window.addEventListener('DOMContentLoaded', () => {
     // TIMER
     const deadline = '2022-12-02';
@@ -110,19 +130,95 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // CLICKER
     const clickerScore = document.querySelector('.clicker__score'),
-        clickerBtn = document.querySelector('.clicker__block');
+        clickerBtn = document.querySelector('.clicker__btn');
     let counter = 0;
 
     clickerBtn.addEventListener('click', (e) => {
         let target = e.target;
-        if (target.className = 'clicker__block') {
+        if (target.className = 'clicker__btn') {
             counter % 2 === 0 ? target.style.transform = 'scale(.98)' : target.style.transform = 'scale(1)';
         }
         clickerScore.textContent = counter;
         counter++;
 
     });
+
     // //CLICKER
+
+    // WORDS
+
+    const enWord = document.querySelector('#en'),
+        ruWord = document.querySelector('#ru'),
+        inputs = document.querySelectorAll('.words__input'),
+        btnAdd = document.querySelector('.words__btn'),
+        table = document.querySelector('.words__block');
+
+    let words;
+    let btnDelete;
+
+    localStorage.length < 1 ? words = [] : words = JSON.parse(localStorage.getItem('words'));
+
+    const addWordToTable = (index) => {
+        table.innerHTML += `
+        <div class="add_wrapper">
+            <span class="add_en">${words[index].enlish}</span>
+            <span class="add_ru">${words[index].russian}</span>
+            <button class="add_delete">-</button>
+        </div>
+        `
+    }
+
+    words.forEach((elem, i) => {
+        addWordToTable(i);
+    });
+
+    btnAdd.addEventListener('click', () => {
+        if (enWord.value.length < 1 ||
+            ruWord.value.length < 1 ||
+            !isNaN(enWord.value) ||
+            !isNaN(ruWord.value)) {
+            for (let key of inputs) {
+                key.classList.add('error');
+            }
+        } else {
+            for (let key of inputs) {
+                key.classList.remove('error');
+            }
+            words.push(new createWord(enWord.value, ruWord.value));
+            localStorage.setItem('words', JSON.stringify(words));
+            addWordToTable(words.length - 1);
+            enWord.value = null;
+            ruWord.value = null;
+        }
+    });
+
+    function createWord(english, russian) {
+        this.english = english;
+        this.russian = russian;
+    }
+
+    const deleteWord = (e) => {
+        const rowIndex = e.target.parentNode.rowIndex;
+        e, target.parentNode.parentNode.remove();
+        words.splice(rowIndex, 1);
+        localStorage.removeItem('words');
+        localStorage.setItem('words', JSON.stringify(words));
+    }
+
+    const addEventDelete = () => {
+        if (words.length > 0) {
+            btnDelete = document.querySelectorAll('.add_delete');
+            for (let btn of btnDelete) {
+                btn.addEventListener('click', (e) => {
+                    deleteWord(e);
+                });
+            }
+        }
+    }
+
+    addEventDelete();
+
+    // //WORDS
 
 
     // SNOW NAVIGATION
@@ -142,4 +238,3 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 });
-

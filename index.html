@@ -4,7 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
+        integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.5/ScrollTrigger.min.js"
+        integrity="sha512-m/n857VfrPYUcRvzCfqfrC9aMT06TQA2V0DcX/Ovovrhswa3038FfYmHlB0l/ZMukVyKWmiwZI4Pnnd7v3FwFQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/7cdb33ebcf.js" crossorigin="anonymous"></script>
     <title>Projects</title>
 </head>
 
@@ -16,6 +23,7 @@
                 <li class="link__item"><a class="link__btn" href="#timer">Таймер</a></li>
                 <li class="link__item"><a class="link__btn" href="#game">Крестики нолики</a></li>
                 <li class="link__item"><a class="link__btn" href="#clicker">Кликер</a></li>
+                <li class="link__item"><a class="link__btn" href="#words">Словарь</a></li>
             </ul>
         </nav>
         <div class="social">
@@ -32,7 +40,7 @@
         <!-- TIMER -->
         <section class="timer" id="timer">
             <div class="timer__inner">
-                <h1 class="timer__title">До моего дня рождения осталось:</h1>
+                <h2 class="timer__title">До моего дня рождения осталось:</h2>
                 <div class="timer__wrapper">
                     <div class="timer__block">
                         <span class="timer__span" id="days">12</span>
@@ -59,7 +67,7 @@
         <!-- GAME -->
         <section class="game" id="game">
             <div class="game__inner">
-                <h1 class="game__title">Крестики нолики</h1>
+                <h2 class="game__title">Крестики нолики</h2>
                 <div class="game__wrapper">
                     <div class="game__block"></div>
                     <div class="game__block"></div>
@@ -86,19 +94,36 @@
         <!-- CLICKER -->
         <section class="clicker" id="clicker">
             <div class="clicker__inner">
-                <h1 class="clicker__title">Кликер</h1>
+                <h2 class="clicker__title">Кликер</h2>
                 <div class="clicker__wrapper">
                     <div class="clicker__score">0</div>
-                    <button class="clicker__block"></button>
+                    <button class="clicker__btn"></button>
                 </div>
             </div>
         </section>
         <!-- //CLICKER -->
 
+        <!-- WORDS -->
+        <section class="words" id="words">
+            <div class="words__inner">
+                <h2 class="words__title">Словарь</h2>
+                <div class="words__wrapper">
+                    <input class="words__input" type="text" id="en" value="" placeholder="Слово">
+                    <input class="words__input" type="text" id="ru" value="" placeholder="Перевод">
+                    <button class="words__btn">+</button>
+                </div>
+                <div class="words__block"></div>
+            </div>
+            <div class="effect"></div>
+            <div class="modal">
+                <p class="modal__text">Скоро...</p>
+            </div>
+        </section>
+        <!-- //WORDS -->
+
     </div>
 
     <script src="js/main.min.js"></script>
-    <script src="https://kit.fontawesome.com/7cdb33ebcf.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
