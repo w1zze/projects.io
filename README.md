@@ -1,1 +1,1 @@
-# https://w1zze.github.io/restaurant.io/
+# https://w1zze.github.io/projects.io/
